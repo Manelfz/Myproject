@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/gestion-stock/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/art/edit.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/vent/new.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/AppBundle/Controller/exController.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/art/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/ventdet/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/AppBundle/Controller/cntController.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/Profile/edit.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/vent/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/achadet/new.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/achatsBundle/Form/achType.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/ventdet/new.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/layout_changer_mdp.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/articleBundle/Controller/artController.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/acceuilBundle/Resources/views/acceuil/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/ach/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/web/scss/style.scss</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/achadet/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/vent/edit.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/layout_modif_profil.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/vendor/friendsofsymfony/user-bundle/Form/Type/ChangePasswordFormType.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/cli/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/Profile/show.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/ventesBundle/Form/ventType.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/ChangePassword/change_password.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/articleBundle/Form/artType.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/four/index.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/template/cadreUser.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/layout_login.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/FOSUserBundle/views/Security/login_content.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/art/new.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/articleBundle/Entity/art.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/ventesBundle/Controller/ventController.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/src/fournisseurBundle/Entity/Four.php</file>
+            <file>file:/C:/wamp/www/gestion-stock/app/Resources/views/ach/new.html.twig</file>
+            <file>file:/C:/wamp/www/gestion-stock/web/js/layout.js</file>
+        </group>
+    </open-files>
+</project-private>
