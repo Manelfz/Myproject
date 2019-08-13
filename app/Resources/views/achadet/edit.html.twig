@@ -1,0 +1,29 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Modifier l'achat détail</h1>
+
+<div>
+    {{ form_start(edit_form) }}
+        {{ form_row(edit_form.nomArticle,{'attr':{'class':'form-control','placeholder':'Nom article'}}) }}
+        {{ form_row(edit_form.refArticle,{'attr':{'class':'form-control','placeholder':'Référence article'}}) }}
+        {{ form_row(edit_form.prixAchatHt,{'attr':{'class':'form-control','placeholder':'Prix achat HT'}}) }}
+        {{ form_row(edit_form.prixVenteHt,{'attr':{'class':'form-control','placeholder':'Prix vente HT'}}) }}
+        {{ form_row(edit_form.quantite,{'attr':{'class':'form-control','placeholder':'Quantité'}}) }}
+</div>
+        <input class='btn btn-success' type="submit" value="Valider" />
+    {{ form_end(edit_form) }}
+<br>
+    <ul class="list-unstyled">
+      
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+<br>
+         <li>
+            <a href="{{ path('achadet_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

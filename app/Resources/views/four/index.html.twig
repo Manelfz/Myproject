@@ -1,0 +1,53 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class="text-center">Liste des fournisseurs</h1>
+<br>
+    <table class="table table-active">
+        <thead>
+            <tr class="table-secondary">
+
+                <th>Nom fournisseur</th>
+                <th>Nom personne à contacter</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for four in fours %}
+            <tr>
+                
+                <td>{{ four.nomFournisseur }}</td>
+                <td>{{ four.nomPersonne }}</td>
+                <td>{{ four.email }}</td>
+                <td>{{ four.tel }}</td>
+                <td>{{ four.adresse }}</td>
+              
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('four_show', { 'id': four.id }) }}">
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ path('four_edit', { 'id': four.id }) }}">
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <ul class="list-unstyled">
+
+        <li>
+            <a class="btn btn-primary" href="{{ path('four_new') }}">Créer un nouveau fournisseur</a>
+        </li>
+    </ul>
+{% endblock %}

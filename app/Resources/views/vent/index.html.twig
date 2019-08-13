@@ -1,0 +1,50 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+
+    <h1 class="text-center">Liste des ventes</h1>
+<br>
+    <table class="table table-active" >
+        <thead>
+            <tr class="table-secondary">
+  
+                <th>N° vente</th>              
+                <th>Prix vente total</th>
+                <th>Payement</th>
+                <th>Balance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vent in vents %}
+            <tr>
+                <td>{{ vent.numVente }}</td>              
+                <td>{{ vent.prixVenteTotal }}</td>
+                <td>{{ vent.payement }}</td>
+                <td>{{ vent.balance }}</td>
+      
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('vent_show', { 'id': vent.id }) }}">
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ path('vent_edit', { 'id': vent.id }) }}">
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a class='btn btn-primary' href="{{ path('vent_new') }}">Créer une nouvelle vente</a>
+        </li>
+    </ul>
+{% endblock %}

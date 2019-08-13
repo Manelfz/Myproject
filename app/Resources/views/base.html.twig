@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=urf=8 />
+        <title>{% block title %}Bienvenue sur notre logiciel de stock!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-oracle=1.0" />
+
+        <!-- fonction "asset" pointe sur le dossier web -->
+        <link rel="stylesheet" href="{{ asset('build/layout.css') }}" /> 
+        <link rel="icon" type="png" href="{{ asset('images/Gestion_de_stock.png') }}" />
+    </head>
+    <body>
+
+  {% block nav %} {% endblock %}
+
+     <div class="wrapper">
+       
+        {% block body %} {% endblock %}
+    </div>
+
+  {% block footer %} {% endblock %}
+       
+
+        <script src="{{ asset('build/runtime.js') }}"></script>
+        <script src="{{ asset('build/layout.js') }}"></script>
+    </body>
+</html>
+

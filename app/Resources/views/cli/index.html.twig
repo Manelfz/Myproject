@@ -1,0 +1,50 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class="text-center">Liste des clients</h1>
+<br>
+    <table class="table table-active">
+        <thead>
+            <tr class="table-secondary">
+               
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cli in clis %}
+            <tr>
+                
+                <td>{{ cli.nomClient }}</td>
+                <td>{{ cli.emailClient }}</td>
+                <td>{{ cli.telClient }}</td>
+                <td>{{ cli.adresseClient }}</td>
+                
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('cli_show', { 'id': cli.id }) }}">
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ path('cli_edit', { 'id': cli.id }) }}">
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a class="btn btn-primary" href="{{ path('cli_new') }}">Créer un nouveau Client</a>
+        </li>
+    </ul>
+{% endblock %}

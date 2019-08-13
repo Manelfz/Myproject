@@ -1,0 +1,61 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Achat</h1>
+
+
+<div>
+    <table class="table table-info table-bordered table-sm" >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ach.id }}</td>
+            </tr>
+            <tr>
+                <th>Prix total d'achats</th>
+                <td>{{ ach.prixTotalDachats }}</td>
+            </tr>
+            <tr>
+                <th>Payement</th>
+                <td>{{ ach.payement }}</td>
+            </tr>
+            <tr>
+                <th>Balance</th>
+                <td>{{ ach.balance }}</td>
+            </tr>
+            <tr>
+                <th>Date d'ajout</th>
+                <td>{% if ach.dateAjoutAchat %}{{ ach.dateAjoutAchat|date('Y-m-d H:i:s') }}{% endif %}
+                        </td>
+            </tr>
+            <tr>
+                <th>Ajouté par</th>
+                <td>{{ ach.ajouteParAchat }}</td>
+            </tr>
+            <tr>
+                <th>Date de mise à jour</th>
+                <td>{% if ach.dateMiseAjourAchat %}{{ ach.dateMiseAjourAchat|date('Y-m-d H:i:s') }}{% endif %}
+                                    </td>
+            </tr>
+            <tr>
+                <th>Mis à jour par</th>
+                <td>{{ ach.misAjourParAchat }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <ul class="list-unstyled">
+       
+        <li>
+            {{ form_start(delete_form) }}
+                <input class=' btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+
+        <li>
+            <a href="{{ path('ach_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

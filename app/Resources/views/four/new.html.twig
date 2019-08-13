@@ -1,0 +1,23 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Création d'un fournisseur</h1>
+<br>
+<div class="width-new">
+    {{ form_start(form) }}
+        {{ form_row(form.nomFournisseur,{'attr':{'class':'form-control','placeholder':'Fournisseur'}}) }}
+        {{ form_row(form.nomPersonne,{'attr':{'class':'form-control','placeholder':'Personne à\ contacter'}}) }}
+        {{ form_row(form.email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+        {{ form_row(form.tel,{'attr':{'class':'form-control','placeholder':'Téléphone'}}) }}
+        {{ form_row(form.adresse,{'attr':{'class':'form-control','placeholder':'Adresse'}}) }}
+</div>
+<br>
+        <input class='btn btn-secondary' type="submit" value="Créer" />
+    {{ form_end(form) }}
+<br>
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('four_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

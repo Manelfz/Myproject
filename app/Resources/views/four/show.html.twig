@@ -1,0 +1,67 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Fournisseur</h1>
+
+
+<div>
+    <table class="table table-info table-bordered table-sm" >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ four.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom fournisseur</th>
+                <td>{{ four.nomFournisseur }}</td>
+            </tr>
+            <tr>
+                <th>Nom personne</th>
+                <td>{{ four.nomPersonne }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ four.email }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone</th>
+                <td>{{ four.tel }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ four.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Date d'ajout</th>
+                <td>{% if four.dateAjout %}{{ four.dateAjout|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ajouté par</th>
+                <td>{{ four.ajoutePar }}</td>
+            </tr>
+            <tr>
+                <th>Date de mise à jour</th>
+                <td>{% if four.dateMiseAjour %}{{ four.dateMiseAjour|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour par</th>
+                <td>{{ four.misAjourPar }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+        <ul class="list-unstyled">
+
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+
+        <li>
+            <a href="{{ path('four_index') }}"><u> Retour à la liste </u></a>
+        </li>
+
+    </ul>
+{% endblock %}

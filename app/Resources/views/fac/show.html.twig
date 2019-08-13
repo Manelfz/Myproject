@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fac</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fac.id }}</td>
+            </tr>
+            <tr>
+                <th>Idfacture</th>
+                <td>{{ fac.idFacture }}</td>
+            </tr>
+            <tr>
+                <th>Idventes</th>
+                <td>{{ fac.idVentes }}</td>
+            </tr>
+            <tr>
+                <th>Numerofacture</th>
+                <td>{{ fac.numeroFacture }}</td>
+            </tr>
+            <tr>
+                <th>Datefacturation</th>
+                <td>{% if fac.dateFacturation %}{{ fac.dateFacturation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fac_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('fac_edit', { 'id': fac.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

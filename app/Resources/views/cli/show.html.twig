@@ -1,0 +1,63 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Client</h1>
+
+
+<div>
+    <table class="table table-info table-bordered table-sm" >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cli.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ cli.nomClient }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ cli.emailClient }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone</th>
+                <td>{{ cli.telClient }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ cli.adresseClient }}</td>
+            </tr>
+            <tr>
+                <th>Date d'ajout</th>
+                <td>{% if cli.dateAjoutClient %}{{ cli.dateAjoutClient|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ajouté par</th>
+                <td>{{ cli.ajouteParClient }}</td>
+            </tr>
+            <tr>
+                <th>Date de mise à jour</th>
+                <td>{% if cli.dateMiseAjourClient %}{{ cli.dateMiseAjourClient|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour par</th>
+                <td>{{ cli.misAjourParClient }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <ul class="list-unstyled">
+
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+
+        <li>
+            <a href="{{ path('cli_index') }}"><u> Retour à la liste </u></a>
+        </li>
+
+     </ul>
+{% endblock %}

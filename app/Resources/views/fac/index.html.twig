@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Facs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idfacture</th>
+                <th>Idventes</th>
+                <th>Numerofacture</th>
+                <th>Datefacturation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fac in facs %}
+            <tr>
+                <td><a href="{{ path('fac_show', { 'id': fac.id }) }}">{{ fac.id }}</a></td>
+                <td>{{ fac.idFacture }}</td>
+                <td>{{ fac.idVentes }}</td>
+                <td>{{ fac.numeroFacture }}</td>
+                <td>{% if fac.dateFacturation %}{{ fac.dateFacturation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fac_show', { 'id': fac.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fac_edit', { 'id': fac.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fac_new') }}">Create a new fac</a>
+        </li>
+    </ul>
+{% endblock %}

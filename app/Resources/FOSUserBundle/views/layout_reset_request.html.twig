@@ -1,0 +1,33 @@
+{% extends "template/cadreUser.html.twig" %}
+
+{% block form_reset_request %}
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <h1>S'inscrire</h1>
+
+    </div>
+    <div class="marge-haut">
+
+
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock %}
+        </div>
+ {#exécuté et inclure URL d'inscription et l'inclure dans la page
+{{ render(path("fos_user_registration_register")) }#}
+
+
+</div>
+{% endblock %}

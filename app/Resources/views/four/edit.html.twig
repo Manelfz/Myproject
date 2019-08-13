@@ -1,0 +1,32 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Modifier le fournisseur</h1>
+
+ <br>
+        <div>
+    {{ form_start(edit_form) }}
+        {{ form_row(edit_form.nomFournisseur,{'attr':{'class':'form-control','placeholder':'Fournisseur'}}) }}
+        {{ form_row(edit_form.nomPersonne,{'attr':{'class':'form-control','placeholder':'Personne à\ contacter'}}) }}
+        {{ form_row(edit_form.email,{'attr':{'class':'form-control','placeholder':'Email'}}) }}
+        {{ form_row(edit_form.tel,{'attr':{'class':'form-control','placeholder':'Téléphone'}}) }}
+        {{ form_row(edit_form.adresse,{'attr':{'class':'form-control','placeholder':'Adresse'}}) }}
+</div>
+<br>
+        <input class='btn btn-success btn-block'type="submit" value="Valider" />
+    {{ form_end(edit_form) }}
+<br>
+    <ul class="list-unstyled">
+
+       
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger btn-block' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+<br>
+         <li>
+            <a href="{{ path('four_index') }}"><u> Retour à la  liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

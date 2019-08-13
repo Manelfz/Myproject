@@ -1,0 +1,39 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Création d'une vente</h1>
+<br>
+<div class="width-new" id='vente-new'>
+    {{ form_start(form) }}
+        {{ form_row(form.numVente,{'attr':{'class':'form-control','placeholder':'Numero de la vente'}}) }}
+        {{ form_row(form.client,{'attr':{'class':'form-control'}}) }}
+
+
+  <div class="card" id="details"
+  data-prototype="{{ form_widget(form.vente_details.vars.prototype)|e('html_attr') }}">
+  <h3 class="card-header bg-primary text-white">Détails de la Vente
+      <span class="fa fa- pull-right"></span></h3>
+      
+              {% for row in form.vente_details %}
+                    <div class="card-block">
+    <p class="card-text"> {{ form_row(row) }} </p>
+      
+                    </div>       
+              {% endfor %}
+              
+  </div> 
+
+        {{ form_row(form.prixVenteTotal,{'attr':{'class':'form-control','placeholder':'Prix vente total'}}) }}
+        {{ form_row(form.payement,{'attr':{'class':'form-control','placeholder':'Payement'}}) }}
+        {{ form_row(form.balance,{'attr':{'class':'form-control','placeholder':'Balance'}}) }}
+</div>
+<br>
+        <input class='btn btn-secondary' type="submit" value="Créer" />
+    {{ form_end(form) }}
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('vent_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Création d'une vente détail</h1>
+<br>
+{% if erreur==1 %}
+
+    <code> {{ messageDerreur }}  </code>
+<br>
+{% endif %}
+
+<div class="width-new">
+    {{ form_start(form) }}
+        {{ form_row(form.refArticle) }}
+        {{ form_row(form.prixVenteUnitaire,{'attr':{'class':'form-control','placeholder':'Prix vente unitaire'}}) }}
+        {{ form_row(form.quantite,{'attr':{'class':'form-control','placeholder':'Quantité'}}) }}
+</div>
+<br>
+        <input class='btn btn-secondary' type="submit" value="Créer" />
+    {{ form_end(form) }}
+<br>
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('ventdet_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class="text-center">Liste des achats détails</h1>
+
+    <table class="table table-active">
+        <thead>
+            <tr class="table-secondary">
+              
+                <th>Nom article</th>
+                <th>Référence article</th>
+                <th>Prix achat HT</th>
+                <th>Prix vente HT</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for achadet in achadets %}
+            <tr>
+          
+                <td>{{ achadet.nomArticle }}</td>
+                <td>{{ achadet.refArticle }}</td>
+                <td>{{ achadet.prixAchatHt }}</td>
+                <td>{{ achadet.prixVenteHt }}</td>
+                <td>{{ achadet.quantite }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('achadet_show', { 'id': achadet.id }) }}">
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ path('achadet_edit', { 'id': achadet.id }) }}">
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{#
+    <ul class="list-unstyled">
+        <li>
+            <a class='btn btn-primary' href="{{ path('achadet_new') }}">Créer un nouveau achat détail</a>
+        </li>
+    </ul>
+#}
+{% endblock %}

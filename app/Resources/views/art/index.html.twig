@@ -1,0 +1,53 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+
+     <h1 class="text-center">Liste des articles</h1>
+ <br>
+    <table class="table table-active">
+        <thead>
+            <tr class="table-secondary">
+
+                <th>Référence</th>
+                <th>Nom</th>
+                <th>Prix d'achat</th>
+                <th>Quantité</th>
+                <th>Nom fournisseur</th>
+                <th>Prix de vente</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for art in arts %}
+            <tr>
+                
+                <td>{{ art.refArticle }}</td>
+                <td>{{ art.nomArticle }}</td>
+                <td>{{ art.prixAchatHtArticle }}</td>
+                <td>{{ art.quantiteArticle }}</td>
+                <td>{{ art.nomFournisseur }}</td>
+                <td>{{ art.prixVenteHtArticle }}</td>
+
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('art_show', { 'id': art.id }) }}"> 
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('art_edit', { 'id': art.id }) }}"> 
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a class="btn btn-primary" href="{{ path('art_new') }}">Créer un nouveau Article</a>
+        </li>
+    </ul>
+{% endblock %}

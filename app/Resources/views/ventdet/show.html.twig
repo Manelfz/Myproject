@@ -1,0 +1,60 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1class='text-center' >Vente détail</h1>
+
+
+<div>
+    <table class="table table-info table-bordered table-sm" >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ventdet.id }}</td>
+            </tr>
+            <tr>
+                <th>Référence article</th>
+                <td>{{ ventdet.refArticle }}</td>
+            </tr>
+
+            <tr>
+                <th>Prix vente unitaire</th>
+                <td>{{ ventdet.prixVenteUnitaire }}</td>
+            </tr>
+            <tr>
+                <th>Quantité</th>
+                <td>{{ ventdet.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Date d'ajout</th>
+                <td>{% if ventdet.dateAjoutVentedet %}{{ ventdet.dateAjoutVentedet|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ajouté par</th>
+                <td>{{ ventdet.ajouteParVentedet }}</td>
+            </tr>
+            <tr>
+                <th>Date de mise à jour</th>
+                <td>{% if ventdet.dateMiseAjourVentedet %}{{ ventdet.dateMiseAjourVentedet|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour par</th>
+                <td>{{ ventdet.misAjourParVentedet }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <ul class="list-unstyled">
+        
+      
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+
+        <li>
+            <a href="{{ path('ventdet_index') }}"><u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

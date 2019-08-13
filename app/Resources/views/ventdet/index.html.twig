@@ -1,0 +1,51 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class="text-center">Liste des ventes détails</h1>
+<br>
+    <table class="table table-active">
+        <thead>
+            <tr class="table-secondary">
+              
+                <th>Référence article</th>
+                <th>Nom client</th>
+                <th>Numéro vente</th>
+                <th>Prix vente unitaire</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ventdet in ventdets %}
+            <tr>
+               
+                <td>{{ ventdet.refArticle }}</td>
+                <td>{{ ventdet.nomClient }}</td>
+                <td> {{ ventdet.numVente }}</td>
+                <td>{{ ventdet.prixVenteUnitaire }}</td>
+                <td>{{ ventdet.quantite }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('ventdet_show', { 'id': ventdet.id }) }}">
+<button type="button" class="btn btn-link"><u>Afficher</u></button> </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ path('ventdet_edit', { 'id': ventdet.id }) }}">
+<button type="button" class="btn btn-link"><u>Modifier</u></button> </a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a class='btn btn-primary'href="{{ path('ventdet_new') }}">Créer une nouvelle vente détail</a>
+        </li>
+    </ul>
+{% endblock %}

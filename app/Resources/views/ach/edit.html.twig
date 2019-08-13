@@ -1,0 +1,28 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h1 class='text-center'>Modifier l'achat</h1>
+<br>
+<div>
+    {{ form_start(edit_form) }}
+        {{ form_row(edit_form.prixTotalDachats,{'attr':{'class':'form-control','placeholder':'Prix totale d\'achat'}})  }}
+        {{ form_row(edit_form.payement,{'attr':{'class':'form-control','placeholder':'Payement'}}) }}
+        {{ form_row(edit_form.balance,{'attr':{'class':'form-control','placeholder':'Balance'}}) }}
+</div>
+     <br>
+        <input class='btn btn-success' type="submit" value="Valider" />
+  {{ form_end(edit_form) }}
+<br>
+    <ul class="list-unstyled">
+       
+        <li>
+            {{ form_start(delete_form) }}
+                <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+<br>
+         <li>
+            <a href="{{ path('ach_index') }}"> <u> Retour à la liste </u></a>
+        </li>
+    </ul>
+{% endblock %}

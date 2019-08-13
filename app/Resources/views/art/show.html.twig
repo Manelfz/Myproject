@@ -1,0 +1,75 @@
+{% extends 'template/cadreUser.html.twig' %}
+
+{% block table %}
+    <h2 class='text-center'>Article</h2>
+
+
+   <div>
+    <table class="table table-info table-bordered table-sm" >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ art.id }}</td>
+            </tr>
+            <tr>
+                <th>Référence</th>
+                <td>{{ art.refArticle }}</td>
+            </tr>
+            <tr>
+                <th>Nom de l'article</th>
+                <td>{{ art.nomArticle }}</td>
+            </tr>
+            <tr>
+                <th>Nom du Fournisseur</th>
+                <td>{{ art.nomFournisseur }}</td>
+            </tr>
+            <tr>
+                <th>Prix d'achat</th>
+                <td>{{ art.prixAchatHtArticle }}</td>
+            </tr>
+            <tr>
+                <th>Quantité d'article</th>
+                <td>{{ art.quantiteArticle }}</td>
+            </tr>
+            <tr>
+                <th>Prix vente HT</th>
+                <td>{{ art.prixVenteHtArticle }}</td>
+            </tr>
+            <tr>
+                <th>Date d'ajout</th>
+                <td>{% if art.dateAjoutArticle %}{{ art.dateAjoutArticle|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ajouté par</th>
+                <td>{{ art.ajouteParArticle }}</td>
+            </tr>
+            <tr>
+                <th>Date de mise à jour</th>
+                <td>{% if art.dateMiseAjourArticle %}{{ art.dateMiseAjourArticle|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour par par</th>
+                <td>{{ art.misAjourParArticle }}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+</div>
+
+ 
+    <ul class="list-unstyled">
+     
+        <li>
+            {{ form_start(delete_form) }}
+               <input class='btn btn-danger' type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('art_index') }}"><u> Retour à la liste </u></a>
+        </li
+    
+    </ul>
+{% endblock %}
