@@ -1,0 +1,3 @@
+vente.details_homepage:
+    path:     /vente_details
+    defaults: { _controller: vente_detailsBundle:Default:index }

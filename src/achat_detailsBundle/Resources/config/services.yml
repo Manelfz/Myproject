@@ -1,0 +1,4 @@
+services:
+#    achat.details.example:
+#        class: achat_detailsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

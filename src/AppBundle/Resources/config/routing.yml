@@ -1,0 +1,4 @@
+
+fnct:
+    path:     /fnct
+    defaults: { _controller: AppBundle:cnt:fnct }

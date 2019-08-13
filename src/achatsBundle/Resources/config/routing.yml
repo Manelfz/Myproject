@@ -1,0 +1,3 @@
+achats_homepage:
+    path:     /achats
+    defaults: { _controller: achatsBundle:Default:index }

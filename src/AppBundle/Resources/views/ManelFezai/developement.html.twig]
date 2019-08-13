@@ -1,0 +1,7 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:cnt:fnct{% endblock %}
+
+{% block body %}
+<h1>Welcome to the cnt:fnct page</h1>
+{% endblock %}

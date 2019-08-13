@@ -1,0 +1,11 @@
+acceuil_homepage:
+    path:     /
+    defaults: { _controller: acceuilBundle:acceuil:index }
+    
+apropos_homepage:
+    path:     /apropos/
+    defaults: { _controller: acceuilBundle:acceuil:apropos }
+   
+contact_homepage:
+    path:     /contact/
+    defaults: { _controller: acceuilBundle:acceuil:contact }

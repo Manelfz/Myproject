@@ -1,0 +1,379 @@
+<?php
+
+namespace vente_detailsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ventdet
+ *
+ * @ORM\Table(name="ventdet")
+ * @ORM\Entity(repositoryClass="vente_detailsBundle\Repository\ventdetRepository")
+ */
+class ventdet
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ventesBundle\Entity\vent",
+     *                  inversedBy="vente_details",
+     *                  cascade={"persist"})
+     *
+     * @ORM\JoinColumn(nullable=false)
+     */ 
+    private $vente ;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ref_article", type="integer", unique=true)
+     */
+    private $refArticle;
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_client", type="string", length=25)
+     */
+    private $nomClient;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix_achat_ht", type="float")
+     */
+    private $prixAchatHt;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prix_vente_unitaire", type="integer")
+     */
+    private $prixVenteUnitaire;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantite", type="integer")
+     */
+    private $quantite;
+    
+     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_ajout_ventedet", type="datetime")
+     */
+    private $dateAjoutVentedet;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="ajoute_par_ventedet", type="string", length=25)
+     */
+    private $ajouteParVentedet;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_mise_ajour_ventedet", type="datetime")
+     */
+    private $dateMiseAjourVentedet;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="mis_ajour_par_ventedet", type="string", length=25)
+     */
+    private $misAjourParVentedet;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set refArticle
+     *
+     * @param integer $refArticle
+     *
+     * @return ventdet
+     */
+    public function setRefArticle($refArticle)
+    {
+        $this->refArticle = $refArticle;
+
+        return $this;
+    }
+
+    /**
+     * Get refArticle
+     *
+     * @return int
+     */
+    public function getRefArticle()
+    {
+        return $this->refArticle;
+    }
+
+    /**
+     * Set prixAchatHt
+     *
+     * @param float $prixAchatHt
+     *
+     * @return ventdet
+     */
+    public function setPrixAchatHt($prixAchatHt)
+    {
+        $this->prixAchatHt = $prixAchatHt;
+
+        return $this;
+    }
+
+    /**
+     * Get prixAchatHt
+     *
+     * @return float
+     */
+    public function getPrixAchatHt()
+    {
+        return $this->prixAchatHt;
+    }
+
+    /**
+     * Set prixVenteUnitaire
+     *
+     * @param integer $prixVenteUnitaire
+     *
+     * @return ventdet
+     */
+    public function setPrixVenteUnitaire($prixVenteUnitaire)
+    {
+        $this->prixVenteUnitaire = $prixVenteUnitaire;
+
+        return $this;
+    }
+
+    /**
+     * Get prixVenteUnitaire
+     *
+     * @return int
+     */
+    public function getPrixVenteUnitaire()
+    {
+        return $this->prixVenteUnitaire;
+    }
+
+    /**
+     * Set quantite
+     *
+     * @param integer $quantite
+     *
+     * @return ventdet
+     */
+    public function setQuantite($quantite)
+    {
+        $this->quantite = $quantite;
+
+        return $this;
+    }
+
+    /**
+     * Get quantite
+     *
+     * @return int
+     */
+    public function getQuantite()
+    {
+        return $this->quantite;
+    }
+
+    /**
+     * Set dateAjoutVentedet
+     *
+     * @param \DateTime $dateAjoutVentedet
+     *
+     * @return ventdet
+     */
+    public function setDateAjoutVentedet($dateAjoutVentedet)
+    {
+        $this->dateAjoutVentedet = $dateAjoutVentedet;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAjoutVentedet
+     *
+     * @return \DateTime
+     */
+    public function getDateAjoutVentedet()
+    {
+        return $this->dateAjoutVentedet;
+    }
+
+    /**
+     * Set ajouteParVentedet
+     *
+     * @param string $ajouteParVentedet
+     *
+     * @return ventdet
+     */
+    public function setAjouteParVentedet($ajouteParVentedet)
+    {
+        $this->ajouteParVentedet = $ajouteParVentedet;
+
+        return $this;
+    }
+
+    /**
+     * Get ajouteParVentedet
+     *
+     * @return string
+     */
+    public function getAjouteParVentedet()
+    {
+        return $this->ajouteParVentedet;
+    }
+
+    /**
+     * Set dateMiseAjourVentedet
+     *
+     * @param \DateTime $dateMiseAjourVentedet
+     *
+     * @return ventdet
+     */
+    public function setDateMiseAjourVentedet($dateMiseAjourVentedet)
+    {
+        $this->dateMiseAjourVentedet = $dateMiseAjourVentedet;
+
+        return $this;
+    }
+
+    /**
+     * Get dateMiseAjourVentedet
+     *
+     * @return \DateTime
+     */
+    public function getDateMiseAjourVentedet()
+    {
+        return $this->dateMiseAjourVentedet;
+    }
+
+    /**
+     * Set misAjourParVentedet
+     *
+     * @param string $misAjourParVentedet
+     *
+     * @return ventdet
+     */
+    public function setMisAjourParVentedet($misAjourParVentedet)
+    {
+        $this->misAjourParVentedet = $misAjourParVentedet;
+
+        return $this;
+    }
+
+    /**
+     * Get misAjourParVentedet
+     *
+     * @return string
+     */
+    public function getMisAjourParVentedet()
+    {
+        return $this->misAjourParVentedet;
+    }
+
+    /**
+     * Set nomClient
+     *
+     * @param string $nomClient
+     *
+     * @return ventdet
+     */
+    public function setNomClient($nomClient)
+    {
+        $this->nomClient = $nomClient;
+
+        return $this;
+    }
+
+    /**
+     * Get nomClient
+     *
+     * @return string
+     */
+    public function getNomClient()
+    {
+        return $this->nomClient;
+    }
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->vente = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add vente
+     *
+     * @param \ventesBundle\Entity\vent $vente
+     *
+     * @return ventdet
+     */
+    public function addVente(\ventesBundle\Entity\vent $vente)
+    {
+        $this->vente[] = $vente;
+
+        return $this;
+    }
+
+    /**
+     * Remove vente
+     *
+     * @param \ventesBundle\Entity\vent $vente
+     */
+    public function removeVente(\ventesBundle\Entity\vent $vente)
+    {
+        $this->vente->removeElement($vente);
+    }
+
+    /**
+     * Get vente
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVente()
+    {
+        return $this->vente;
+    }
+
+    /**
+     * Set vente
+     *
+     * @param \ventesBundle\Entity\vent $vente
+     *
+     * @return ventdet
+     */
+    public function setVente(\ventesBundle\Entity\vent $vente)
+    {
+        $this->vente = $vente;
+
+        return $this;
+    }
+}
