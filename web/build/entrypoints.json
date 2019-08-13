@@ -1,0 +1,13 @@
+{
+  "entrypoints": {
+    "layout": {
+      "js": [
+        "/build/runtime.js",
+        "/build/layout.js"
+      ],
+      "css": [
+        "/build/layout.css"
+      ]
+    }
+  }
+}
